@@ -7,6 +7,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import algorithm.sort.SortAlgorithm;
+import junit.framework.Assert;
 
 public class TestSortAlgorithm {
 	private int[] bf;
@@ -21,8 +22,8 @@ public class TestSortAlgorithm {
 	/**
 	 * รฐลÝลละ๒
 	 */
+	@Test
 	@Ignore
-	
 	public void testBubbleSort(){
 		String bfA = toString(bf);
 		System.out.println("the array's length is "+bf.length);
@@ -30,7 +31,22 @@ public class TestSortAlgorithm {
 		int[] result = SortAlgorithm.bubbleSort(bf);
 		String afA = toString(result);
 		System.out.println("after sort:"+afA);
+		Assert.assertTrue(SortUtil.isSort(result));
 	}
+	
+	@Test
+	@Ignore
+	public void testChoiceSort(){
+		String bfA = toString(bf);
+		System.out.println("the array's length is "+bf.length);
+		System.out.println("before sort:"+bfA);
+		int[] result = SortAlgorithm.choiceSort(bf);
+		String afA = toString(result);
+		System.out.println("after sort:"+afA);
+		Assert.assertTrue(SortUtil.isSort(result));
+	}
+	
+	@Test
 	@Ignore
 	public void testInsertionSort(){
 		String bfA = toString(bf);
@@ -39,9 +55,11 @@ public class TestSortAlgorithm {
 		int[] result = SortAlgorithm.insertionSort(bf);
 		String afA = toString(result);
 		System.out.println("after sort:"+afA);
+		Assert.assertTrue(SortUtil.isSort(result));
 	}
 	
 	@Test
+	@Ignore
 	public void testQuickSort(){
 		String bfA = toString(bf);
 //		int[] bf= {2,1,4,56,3};
@@ -50,8 +68,34 @@ public class TestSortAlgorithm {
 		int[] result = SortAlgorithm.quickSort(bf);
 		String afA = toString(result);
 		System.out.println("after sort:"+afA);
+		Assert.assertTrue(SortUtil.isSort(result));
 	}
 	
+	@Test
+	@Ignore
+	public void testMegerSort(){
+		String bfA = toString(bf);
+		System.out.println("the array's length is "+bf.length);
+		System.out.println("before sort:"+bfA);
+		int[] result = SortAlgorithm.megerSort(bf);
+		String afA = toString(result);
+		System.out.println("after sort:"+afA);
+		Assert.assertTrue(SortUtil.isSort(result));
+	}
+	@Test
+	public void testHeapSort(){
+		System.out.println(">>>>>>>>>>><<<<<<<<<<<<");
+//		int[] bf = {27,35,22,18,7,24,84};
+		String bfA = toString(bf);
+		System.out.println("the array's length is "+bf.length);
+		System.out.println("before sort:"+bfA);
+		int[] result = SortAlgorithm.heapSort(bf);
+		String afA = toString(result);
+		System.out.println("after sort:"+afA);
+		Assert.assertTrue(SortUtil.isSort(result));
+	}
+	
+
 	/**
 	 * ืึท๛ดฎปฏสýื้
 	 * @param array
